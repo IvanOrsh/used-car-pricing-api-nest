@@ -23,6 +23,18 @@ This project was created while taking Stephen Grider's Nest course.
 
 ---
 
+### Module Design
+
+| Controllers        | Services        | Repositores        |
+| ------------------ | --------------- | ------------------ |
+| Users Controller   | Users Service   | Users Repository   |
+| Reports Controller | Reports Service | Reports Repository |
+
+- Users Module
+- Reports Module
+
+---
+
 ## Installation
 
 ```bash
