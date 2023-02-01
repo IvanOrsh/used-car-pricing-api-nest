@@ -63,12 +63,13 @@ Connection to SQLite DB
 
 ### Extra Routes
 
-| Method and Route    | Body or QS                 | Description                     | Controller Method |
-| ------------------- | -------------------------- | ------------------------------- | ----------------- |
-| GET /auth/:id       | -                          | Find a user with a given id     | findUser          |
-| GET /auth?email=... | -                          | Find all users with given email | findAllUsers      |
-| PATCH /auth/:id     | Body - { email, password } | Update a user with a given id   | updateUser        |
-| DELETE /auth/:id    | -                          | Delete user with given id       | removeUser        |
+| Method and Route    | Body or QS                 | Description                     | Controller Method | Service Method |
+| ------------------- | -------------------------- | ------------------------------- | ----------------- | -------------- |
+| POST /auth/signup   | Body - { email, password } | Create a new user               | createUser        | create         |
+| GET /auth/:id       | -                          | Find a user with a given id     | findUser          | findOne        |
+| GET /auth?email=... | -                          | Find all users with given email | findAllUsers      | find           |
+| PATCH /auth/:id     | Body - { email, password } | Update a user with a given id   | updateUser        | update         |
+| DELETE /auth/:id    | -                          | Delete user with given id       | removeUser        | remove         |
 
 ---
 
