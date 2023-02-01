@@ -11,6 +11,18 @@ This project was created while taking Stephen Grider's Nest course.
 
 ---
 
+### API Design
+
+| Method and Route  | Body or Query String                                              | Description                                    |
+| ----------------- | ----------------------------------------------------------------- | ---------------------------------------------- |
+| POST /auth/signup | Body - { email, password }                                        | Create a new user and sing in                  |
+| POST /auth/signup | Body - { email, password }                                        | Sign in as an existing user                    |
+| GET /reports      | QS - make, model, year, mileage, longitude, latitude              | Get an estimate for the cars value             |
+| POST /reports     | Body - { make, model, year, mileage, longitude, latitude, price } | Report how much a vehicle sold for             |
+| PATCH /reports    | Body - { approved }                                               | Approve or reject a report submitted by a user |
+
+---
+
 ## Installation
 
 ```bash
