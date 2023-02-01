@@ -35,6 +35,30 @@ This project was created while taking Stephen Grider's Nest course.
 
 ---
 
+### Setting Up a Database Connection
+
+- SQLite initially, eventually - Postgres
+
+(SQlite DB, as an example):
+
+```txt
+Connection to SQLite DB
+                       \
+                        \___>  AppModule
+                   ---------------------------
+    UsersModule   /                           \ ReportsModule
+    --------------                    ------------------------
+  User Entity                          Report Entity
+  Users Repository                     Reports Repository
+
+- User Entity -> Lists the different properties that a User has (no functionality)
+- Users Repository -> Methods to find, update, delete, create a User
+
+- Report Entity -> Lists the different properties that a Report has
+- Reports Repository -> Methods to find, update, delete, create a Report
+
+```
+
 ## Installation
 
 ```bash
