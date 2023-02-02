@@ -97,6 +97,42 @@ Connection to SQLite DB
 
 ---
 
+#### Authentication Overview
+
+```txt
+
+Client                         Server
+------                         ---------
+POST /auth/signup -------->    See if this email is already in use
+{ email, password }            if it is, return error
+                               otherwise...
+                                    |
+                                    V
+                              Encrypt the users's password
+                                    |
+                                    V
+                              Store the new user record
+                                    |
+           cookie (userId=42)       V
+Browser   <---------------    Send back a cookie that contains the user's id
+automatically
+stores the cookie
+and attaches it to
+follow up requests
+      |
+      | some time later
+      V
+POST /reports------------->   Look at data in the cookie. Make sure it hasn't
+Cookie: userId=42             been tampered with
+{ some info }                       |
+                                    V
+                              Look at the userId in cookie to figure out who
+                              is making the request
+
+```
+
+---
+
 ## Installation
 
 ```bash
