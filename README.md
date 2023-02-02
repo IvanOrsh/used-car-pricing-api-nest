@@ -73,6 +73,30 @@ Connection to SQLite DB
 
 ---
 
+### Quick Review
+
+```txt
+          Request { email, password }
+           |
+           V
+          ValidationPipe <---- CreateUserDto { email:string; password: string }
+           |
+           V
+          UsersController - Defines routes + picks relevant data from
+           |                incoming request
+           V
+          UserService - Contains our real app logic  ---
+           |                                            \ User Entity - defines what
+           V                                            /               a user is
+          UsersRepository - Created by TypeORM ---------
+           |                interface to the DB
+           V
+          SQLite DB
+
+```
+
+---
+
 ## Installation
 
 ```bash
