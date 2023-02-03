@@ -201,6 +201,23 @@ Set-Cookie: ey5kaf
 
 ---
 
+### CurrentUser Decorator & CurrentUser Interceptor
+
+```txt
+
+                     -------------------------------------------------------------
+                    |         DI System                                           |
+Session   ------------> CurrentUser  <- UsersService  UsersController  UsersRepo  |
+Object              |   Interceptor       Instance      Instance       Instance   |
+                     -------|-----------------------------------------------------
+                            V
+                        CurrentUser
+                         Decorator
+
+```
+
+---
+
 ## Installation
 
 ```bash
