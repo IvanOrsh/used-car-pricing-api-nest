@@ -133,6 +133,40 @@ Cookie: userId=42             been tampered with
 
 ---
 
+### Password Hashing
+
+1. **hashing function**
+
+- very small changes to the input result in a dramatically different hash
+- hashing process can't be undone or reversed to figure out the input
+
+2. **hashed and salted**
+
+- in cryptography, **salt** is random data that is used as an additional input to a one-way function that hashes data, a password or passphrase (from wiki).
+
+```txt
+
+user's password|      | salt  |
+---------------|      |-------|
+somePassword   |      | a1d01 |
+
+           \            /   \
+           |           |     \
+           V           V      \
+         somePassworda1d01     \
+                 |              \
+                 V               \
+          Hashing Function        \
+          ----------------         \
+                 |                  |
+                 V                  V
+              Output -----------> Hashed and salted password -> gonna be strored
+             010066d                 010066d.a1d01              inside our db
+
+```
+
+---
+
 ## Installation
 
 ```bash

@@ -3,8 +3,8 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
-  "password": "validPassword123"
+  "email": "unique@email.com",
+  "password": "qwerty"
 }
 
 ### Create a new user, invalid body
