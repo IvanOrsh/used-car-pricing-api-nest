@@ -1,4 +1,4 @@
-### Create a new user
+### Create a new user (if already created - gonna throw)
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
@@ -7,13 +7,22 @@ Content-Type: application/json
   "password": "qwerty"
 }
 
-### Create a new user, invalid body
-POST http://localhost:3000/auth/signup
+### Try to signin (should not throw)
+POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email": null,
-  "password": "validPassword123"
+  "email": "unique@email.com",
+  "password": "qwerty"
+}
+
+### Try to signin (should throw)
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "unique@email.com",
+  "password": "brambowie"
 }
 
 ### Find a user with a given id
