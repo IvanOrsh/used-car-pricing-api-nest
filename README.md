@@ -140,7 +140,7 @@ Cookie: userId=42             been tampered with
 - very small changes to the input result in a dramatically different hash
 - hashing process can't be undone or reversed to figure out the input
 
-2. **hashed and salted**
+2. **Signup Flow**
 
 - in cryptography, **salt** is random data that is used as an additional input to a one-way function that hashes data, a password or passphrase (from wiki).
 
@@ -162,6 +162,40 @@ somePassword   |      | a1d01 |
                  V                  V
               Output -----------> Hashed and salted password -> gonna be strored
              010066d                 010066d.a1d01              inside our db
+
+```
+
+---
+
+### Setting up Sessions
+
+```txt
+
+                                 Server
+GET /asdf   ---------> Cookie-Session library looks at the
+Headers                'Cookie' header
+Cookie: es3jd2df              |
+                              V
+                        Cookie-Session decodes the string,      Session
+                        resulting in an object            ---> { color: 'red' }
+                              |
+                              V
+                        We get access to session object in
+                        a request handler using a decorator
+                              |
+                              V
+                        We add/remove/change properties        Session
+                        on the session object             ---> { color: 'blue' }
+                              |
+                              V
+                        Cookie-Session sees the updated
+                        session and turns it into an
+                        encrypted string
+                              |
+                              V
+Response  <----------   String sent back in the 'Set-Cookie'
+Headers                 header on the response object
+Set-Cookie: ey5kaf
 
 ```
 
