@@ -1,29 +1,26 @@
-### Create a new user (if already created - gonna throw)
+### Create a new user
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "email": "unique@email.com",
+  "email": "sessionSession@email.com",
   "password": "qwerty"
 }
 
-### Try to signin (should not throw)
+### Sign in as an existing user
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-  "email": "unique@email.com",
+  "email": "sessionSession@email.com",
   "password": "qwerty"
 }
 
-### Try to signin (should throw)
-POST http://localhost:3000/auth/signin
-Content-Type: application/json
+### Get the currently singed in user
+GET http://localhost:3000/auth/whoami
 
-{
-  "email": "unique@email.com",
-  "password": "brambowie"
-}
+### Sign out
+POST http://localhost:3000/auth/signout
 
 ### Find a user with a given id
 GET http://localhost:3000/auth/4
