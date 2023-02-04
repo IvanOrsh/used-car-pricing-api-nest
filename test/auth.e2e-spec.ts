@@ -4,7 +4,7 @@ import * as request from 'supertest';
 
 import { AppModule } from './../src/app.module';
 
-describe('Authentication Sysgtem (e2e)', () => {
+describe('Authentication System (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
