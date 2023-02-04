@@ -8,7 +8,7 @@ import {
 import { UsersService } from '../users.service';
 
 @Injectable()
-export class CurrentUserInterceptor implements NestInterceptor {
+export class CurrentUserMiddleware implements NestInterceptor {
   constructor(private usersService: UsersService) {}
 
   async intercept(context: ExecutionContext, handler: CallHandler<any>) {
