@@ -220,8 +220,8 @@ Object              |   Interceptor       Instance      Instance       Instance 
 
 ### Associate a user with the reports they create
 
-- A User has many Reports
-- A Report has one User
+- A User has many Reports (@OneToMany)
+- A Report has one User (@ManyToOne)
 
 ---
 
