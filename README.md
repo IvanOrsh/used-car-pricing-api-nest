@@ -223,6 +223,20 @@ Object              |   Interceptor       Instance      Instance       Instance 
 - A User has many Reports (@OneToMany)
 - A Report has one User (@ManyToOne)
 
+```txt
+
+POST /reports
+Cookie: asdfj13 ---> @CurrentUser() ----> user entity instance  -
+{                    Decorator                                   \ Report Entity Instance -> Reports Repo
+  year: 1950,                                                    /  - lng                     Save Method
+  mileage: ...  ---> @Body()        ----> Validated             -   - lat
+  price: ...         CreateReportDto      CreatedReportDto          - ...
+  make:                                                             - price
+  ...                                                               - user: user entity instance
+}
+
+```
+
 ---
 
 ## Installation
