@@ -12,8 +12,120 @@ Content-Type: application/json
   "price": 500000
 }
 
+### create another report, same make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1982,
+  "mileage": 95000,
+  "lng": 0,
+  "lat": 0,
+  "price": 500000
+}
+
+### create another report, same make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1979,
+  "mileage": 145000,
+  "lng": 4,
+  "lat": -4,
+  "price": 35000
+}
+
+### create another report, same make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1982,
+  "mileage": 115000,
+  "lng": 2,
+  "lat": -4,
+  "price": 14000
+}
+
+### create another report, same make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1999,
+  "mileage": 15000,
+  "lng": 0,
+  "lat": 0,
+  "price": 25000
+}
+
+### create another report, same make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "toyota",
+  "model": "corolla",
+  "year": 1970,
+  "mileage": 115000,
+  "lng": 0,
+  "lat": 0,
+  "price": 5000
+}
+
+### create another report, different make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "ford",
+  "model": "focus",
+  "year": 2001,
+  "mileage": 125000,
+  "lng": 0,
+  "lat": 0,
+  "price": 5000
+}
+
+### create another report, different make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "ford",
+  "model": "focus",
+  "year": 1999,
+  "mileage": 115000,
+  "lng": 2,
+  "lat": -2,
+  "price": 3500
+}
+
+### create another report, different make/model
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "make": "ford",
+  "model": "mustange",
+  "year": 1990,
+  "mileage": 16000,
+  "lng": 2,
+  "lat": 12,
+  "price": 13000
+}
+
 ### approve an existing report
-PATCH http://localhost:3000/reports/1
+PATCH http://localhost:3000/reports/7
 Content-Type: application/json
 
 {
@@ -22,3 +134,6 @@ Content-Type: application/json
 
 ### get an estimate for an existing vehicle
 GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=20000&year=1980
+
+### get an estimate for an existing vehicle
+GET http://localhost:3000/reports?make=ford&model=focus&lng=0&lat=0&mileage=125000&year=2001

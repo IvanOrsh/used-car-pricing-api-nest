@@ -239,6 +239,17 @@ Cookie: asdfj13 ---> @CurrentUser() ----> user entity instance  -
 
 ---
 
+### Calculate Estimate for GET /reports endpoint:
+
+- find reports for the same make/model
+- within +/- 5 miles (lng, lat)
+- within 3 years
+- only consider approved reports
+- order by closes mileage
+- take the top 3 closest reports and average their value
+
+---
+
 ## Installation
 
 ```bash
